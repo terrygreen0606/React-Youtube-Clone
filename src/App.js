@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Grid } from '@material-ui/core';
 
 import SearchBar from './components/SearchBar';
 import VideoDetails from './components/VideoDetails';
 import VideoList from './components/VideoList';
+import { YoutubeContext } from './context/youtube.context';
 
 function App() {
+	const { loadVideos } = useContext(YoutubeContext);
+
+	useEffect(() => {
+		loadVideos('react js');
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
 	return (
 		<Grid container justify="center">
 			<Grid item xs={12}>

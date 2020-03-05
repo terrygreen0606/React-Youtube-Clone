@@ -7,9 +7,7 @@ import VideoItem from './VideoItem';
 
 const VideoList = () => {
 	const { allVideos, loading } = useContext(YoutubeContext);
-	if (Object.keys(allVideos).length === 0) {
-		return <div>Video List</div>;
-	} else if (loading) {
+	if (loading || Object.keys(allVideos).length === 0) {
 		return <div>Loading...</div>;
 	} else {
 		const listOfVideos = allVideos.videos.map((video, index) => (

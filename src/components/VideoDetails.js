@@ -6,9 +6,7 @@ import { YoutubeContext } from '../context/youtube.context';
 const VideoDetails = () => {
 	const { allVideos, loading } = useContext(YoutubeContext);
 
-	if (Object.keys(allVideos).length === 0) {
-		return <div>Video Details</div>;
-	} else if (loading) {
+	if (loading || Object.keys(allVideos).length === 0) {
 		return <div>Loading...</div>;
 	} else {
 		const video = allVideos.selectedVideo;
