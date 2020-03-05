@@ -15,19 +15,15 @@ function App() {
 	}, []);
 
 	return (
-		<Grid container justify="center">
+		<Grid container justify="center" spacing={2}>
 			<Grid item xs={12}>
-				<Grid container spacing={2}>
-					<Grid item xs={12}>
-						<SearchBar />
-					</Grid>
-					<Grid item xs={8}>
-						<VideoDetails />
-					</Grid>
-					<Grid item xs={4}>
-						<VideoList />
-					</Grid>
-				</Grid>
+				<SearchBar />
+			</Grid>
+			<Grid item xs={12} sm={12} md={8}>
+				<VideoDetails />
+			</Grid>
+			<Grid item xs={12} sm={12} md={4}>
+				<VideoList />
 			</Grid>
 		</Grid>
 	);
